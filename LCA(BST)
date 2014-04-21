@@ -1,0 +1,13 @@
+public Node LCABST(Node root,Node p,Node q){
+  
+  if(!root || !p || !q){
+    return;
+  }
+  
+  if(Math.max(p.val,q.val)<root.val)
+    LCABST(root.left,p,q);
+  else if(Math.max(p.val,q.val)>root.val)
+    LCABST(root.right,p,q);
+  else
+    return root;
+}
