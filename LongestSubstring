@@ -1,0 +1,28 @@
+public int LongestNonRepeatingSubstring(String original)
+{
+  int len = original.length();
+  int i,j,maxLength=0;
+  bool exist[256] = { false };
+  while(j<len)
+  {
+    if(exist(original[j])
+    {
+      maxLength = Math.max(maxLength,j-i);
+      while(original[i]!=original[j])
+      {
+        exist(original[i]) = false;
+        i++;
+      }
+      i++;
+      j++;
+    }
+    else
+    {
+      exist(original[j]) = true;
+      j++;
+    }
+  }
+  maxLength = Math.max(maxLength,len-i);
+  
+return maxLength;
+}
