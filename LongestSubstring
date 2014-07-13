@@ -1,9 +1,11 @@
+
+//e.g abcc ..maxlength = 3 ; string = abc
 public int LongestNonRepeatingSubstring(String original)
 {
-  int len = original.length();
+  
   int i,j,maxLength=0;
   bool exist[256] = { false };
-  while(j<len)
+  while(j<original.length())
   {
     if(exist(original[j])
     {
