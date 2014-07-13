@@ -1,0 +1,33 @@
+Question : Given a node in a binary tree, find next inoder node without using inorder traversal
+
+
+public Node nextInorderNode (Node inorderNode)
+{
+      Node rightNode = inorderNode.right;
+      
+      if(rightNode==null) {
+        Node parentNode = inorderNode.parent;
+        Node tempNode = inorderNode;
+        // temp = 7, parent = 2
+            while(parentNode!=null && parentNode.left!= tempNode) {
+              tempNode = parentNode;
+              parentNode = parentNode.parent;
+               if(parentNode==null)
+                return emptyNode;
+            }
+            return parentNode;
+          }
+    else {
+        return checkRightSubTreeNode(rightNode);
+    }
+}
+
+public Node checkRightSubTree(Node node)
+{
+  while(node.left!=null)
+      {
+        node = node.left;  
+        
+      }
+    return node;
+}
