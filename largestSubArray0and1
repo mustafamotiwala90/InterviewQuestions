@@ -1,0 +1,23 @@
+//Largest SubArray with equal number of 0's and 1's
+// Time : O(n^2), Space : O(1)
+
+int findSubArray(int arr[])
+{
+  int sum=0;
+  int maxSize = -1;
+  int startIndex;
+  
+for(int i = 0;i<arr.length;i++)
+  {
+    sum = arr[i]==0 ? -1 : 1;
+    for(int j=i+1;j<arr.length;j++)
+      {
+        arr[j]==0 ? sum +=-1 : sum +=1;
+        if(sum==0 && maxSize < j-i+1)
+        {
+          maxSize=j-i+1;
+          startIndex=i;
+        }
+      }
+  }
+}
