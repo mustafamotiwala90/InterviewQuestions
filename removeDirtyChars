@@ -1,0 +1,25 @@
+Remove all characters of string2 from string 1
+e.g str1 = geeksforgeeks
+str2 = mask
+solution : geeforgee
+
+static String removeDirtyChars(String original,String removed)
+{
+  boolean bit[] = new boolean[256];
+  
+  for(char c : removed.toCharArray());
+    bit[c] = true;
+    
+  int i,j=0;
+  char[] str = new char[original.length()];
+  for(i=0;i<original.length();i++)
+  {
+    if(!bit[original.charAt(i)]) {
+      str[j] = original.charAt(i);
+      j++;
+    }
+      
+  }
+  return new String(str);
+
+}
