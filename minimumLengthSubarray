@@ -1,0 +1,29 @@
+//Find minimum length subarray for a sum greater than a given value
+//e.g 1,2,3,4,5 ..sum = 6
+
+
+int smallestSubArayWithSum(int arr[],int x)
+{
+int curr_sum = 0,end=0,start=0;
+int min_length = arr.length + 1;
+
+  while(end < arr.length)
+  {
+    while(curr_sum <=x && end < arr.length)
+    {
+      curr_sum += arr[end++];
+    }
+    
+    while(curr_sum >x && start < arr.length)
+    {
+    
+      if(end-start < min_length) {
+        min_length = end-start;
+      }
+  
+      curr_sum -= arr[start++];
+    }
+  }
+return min_length;
+  
+}
