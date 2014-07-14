@@ -1,0 +1,11 @@
+Given an unsorted Array find maximum value of A[j] - A[i] where j>i..in O(n) time
+
+
+int difference = -1;
+int min = A[0];
+for(int i=1;i<A.length;i++)
+{
+  difference = Math.max(difference,A[i]-min);
+  min = Math.min(min,A[i]);
+}
+return difference;
