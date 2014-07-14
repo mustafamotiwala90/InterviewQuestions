@@ -1,0 +1,27 @@
+//find Longest Pallindrome in a given String
+
+
+static void longestPallindrome(String word)
+{
+  int start,end=0;
+  //odd pallindrome
+  for(int i = 0;i<word.length();i++)
+  {
+    start=end=i;
+    while(start >=0 && end < word.length())
+    {
+      if(word[start]==word[end]) {
+        if(end-start > upper-low)
+        {
+          upper = end;
+          low = start;
+          end++;
+          start--;
+        }
+      }
+    }  
+
+
+
+
+}
