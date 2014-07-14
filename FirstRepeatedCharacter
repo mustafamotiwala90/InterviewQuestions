@@ -1,0 +1,23 @@
+public static char findFirstNonRepeatingChar(String word)
+{
+  Set<Character> repeating = new HashSet<Character>();
+  List<Character> nonRepeating = new ArrayList<Character>();
+  
+  for(int i=0;i<word.length();i++)
+  {
+  char letter = word.getCharAt(i);
+    if(repeating.contains(letter)
+      continue;
+      
+    if(nonRepeating.contains(letter)
+    {
+      nonRepeating.remove((Character) letter);
+      repeating.add(letter);
+    }
+    else 
+      nonRepeating.add(letter);
+  }
+  return nonRepeating.get(0);
+
+
+}
