@@ -1,0 +1,33 @@
+//Remove all duplicates from the input string.
+// e.g i love geeks for geeks
+// solution : ilovegksfr
+
+
+public String removeDuplicateChars(String original)
+{
+  int count = 0;
+  boolean[] countChar = new boolean[256];
+  ArrayList<Character> charArray = new ArrayList<Character>();
+  
+  for(int i = 0;i < original.length();i++)
+  {
+    if(!countChar[original.charAt(i)])
+    {
+      countChar[original.charAt(i) = true;
+      charArray.put(count,original.charAt(i));
+      count++;
+    }
+  }
+
+  return getStringRepresentation(charArray);
+}
+
+private String getStringRepresentation(ArrayList<Character> list)
+{    
+    StringBuilder builder = new StringBuilder(list.size());
+    for(Character ch: list)
+    {
+        builder.append(ch);
+    }
+    return builder.toString();
+}
