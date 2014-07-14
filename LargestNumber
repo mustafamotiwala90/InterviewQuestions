@@ -1,0 +1,12 @@
+Given array arrange numbers to form Biggest number 
+
+
+Steps : 
+- Use a custom comparator and then call Collections.sort(arrays)
+- In custom comparator , take both digits X and Y 
+  check 
+      if(XY > YX)
+        X comes before Y
+      else
+        Y comes before X
+- Print array inorder to get largest number
