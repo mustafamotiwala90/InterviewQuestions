@@ -1,0 +1,22 @@
+Return maximum occuring character in a string
+
+static int getMaxCharCount(String word)
+{
+  if(word.length==0)
+    return null;
+  
+  int max_count = 0;
+  int[] countArray = new int[256];
+  char[] wordChar = word.toCharArray();
+  int index;
+  for(int i=0;i<wordChar.length;i++)
+  {
+      countArray[(int)wordChar[i]]++;
+      if(countArray[(int) wordChar[i]] > max_count)
+      {
+        max_count = countArray[(int)wordChar[i]];
+        index = i;
+      }
+  }
+  return index;
+}
