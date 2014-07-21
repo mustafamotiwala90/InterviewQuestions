@@ -1,0 +1,52 @@
+//Finding common elements between two given Binary Search tree.
+
+
+void commonNodeBetweenBst(Node a, Node b)
+{
+  if(!a || !b)
+    return;
+  Stack<Node> tree1 = new Stack<Node>();
+  Stack<Node> tree2 = new Stack<Node>();
+  
+  Node n1 = a;
+  Node n2 = b;
+while(true)
+{
+  if(n1)
+    {
+      tree1.push(n1);
+      n1 = n1.left;
+    }
+  else if(n2)
+    {
+      tree2.push(n2);
+      n2 = n2.left;
+    }
+  else if(!tree1.isEmpty() || !tree2.isEmpty())
+  {
+  n1 = tree1.top();
+  n2 = tree2.top();
+    if(n1.data < n2.data)
+    {
+      tree1.pop();
+      n1 = n1.right;
+      n2 = null;
+    }
+  else if(n2.data < n1.data)
+    {
+      tree2.pop();
+      n2 = n2.right;
+      n1 = null;
+    }
+  else {
+    print (n1 and n2);
+    tree1.pop();
+    tree2.pop();
+    n1 = n1.right;
+    n2 = n2.right;
+  }
+  }  
+  else
+    break;
+  }
+}
