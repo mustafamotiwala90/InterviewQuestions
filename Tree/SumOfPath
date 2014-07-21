@@ -1,0 +1,15 @@
+// Given a value and a binary search tree.
+// Print all the paths(if there exists more than one) which sum up to that value. 
+// It can be any path in the tree. It doesn't have to be from the root.
+
+boolean hasPathSum(Node node,int sum)
+{
+  if(node==null)
+    return (sum ==0);
+  else
+  {
+    int subSum = sum - node.data;
+    return (hasPathSum(node.left,subSum) || hasPathSum(node.right,subSum);
+  
+  }
+}
