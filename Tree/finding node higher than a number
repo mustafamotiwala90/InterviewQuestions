@@ -1,0 +1,19 @@
+//Given a BST and a number we need to find next biggest number in tree
+
+int findBiggerNumber(Node root,int n)
+{
+  int nextBig = Integer.INT_MIN;
+  Node temp = root;
+  
+  while(root!=null)
+  {
+    if(root.data > n)
+      {
+        nextBig = root.data;
+        root = root.left;
+      }
+    else
+      root = root.right;
+  }
+  return nextBig;
+}
