@@ -1,0 +1,17 @@
+ //Reversing a Doubly linked list
+ 
+ public void reverseDLL( ) {
+   Node temp=head; 
+   head=tail; 
+   tail=temp; 
+    //traverse the list swapping prev and next fields of each node
+  Node p=head; 
+  
+  while(p!=null) //while p does not equal null
+    { 
+      temp=p.next; 
+      p.next=p.prev; 
+      p.prev=temp; 
+      p=p.next;
+    }
+ }
