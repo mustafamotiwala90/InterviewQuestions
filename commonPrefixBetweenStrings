@@ -1,0 +1,17 @@
+public static String getCommonPrefix(String[] strings) {
+    if ((null == strings) || (strings.length == 0)) {
+        return "";
+    } else if (strings.length == 1) {
+        return strings[0];
+    }
+
+    for (int i = 0; i < strings[0].length(); i++) {
+        for (int j = 1; j < strings.length; j++) {
+            if ((strings[j].length() <= i) || (strings[0].charAt(i) != strings[j].charAt(i))) {
+                return strings[0].substring(0, i);
+            }
+        }
+    }
+
+    return strings[0];
+}
