@@ -1,0 +1,17 @@
+//Write one function for all the 3 traversal methods
+
+Queue<Node> inorderQueue = new Queue<Node>();
+Queue<Node> preorderQueue = new Queue<Node>();
+Queue<Node> postorderQueue = new Queue<Node>();
+
+void traverse(Node node)
+{
+  if(node)
+  {
+    preorderQueue.add(node);
+    traverse(node.left);
+    inorderQueue.add(node);
+    traverse(node.right);
+    postorderqueue.add(node);
+  }
+}
