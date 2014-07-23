@@ -1,0 +1,24 @@
+
+
+// getSentence("iamastudentfromwaterloo", {"from, "waterloo", "hi", "am", "yes", "i", "a", "student"}) 
+//"i am a student from waterloo"
+
+
+List<String> store = new ArrayList<String>();
+String getSentence(String text, Set<String> dictionary){
+  
+  if(text.length==0)
+    return null;
+    
+  Set<String> dictionary = new HashSet<String>();
+  for(int i =0;i<text.length;i++)
+    {
+      String currentWord = text.substring(0,i);
+      if(dictionary.containts(currentWord) && getSentence(text.substring(i),dictionary))
+      {
+        store.add(currentWord);
+      }
+    }
+
+
+}
