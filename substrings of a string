@@ -1,0 +1,14 @@
+// Generate all substrings of a string
+
+public void generateSubstrings(String word)
+{
+  int i,j=0;
+  for(i=0;i<word.length();i++)
+    {
+      for(j=1;j<=word.length()-i;j++)
+        {
+          String tempStr = word.substring(i,i + j);
+          System.out.println("String : " +tempStr);
+        }
+    }
+}
