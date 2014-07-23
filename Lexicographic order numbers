@@ -1,0 +1,23 @@
+Given an integer N, print numbers from 1 to N in lexicographic order. 
+
+void Test (int N,int k)
+{
+  if(k > N)
+    return;
+  
+  for(int i = 0;i <=10;i++)
+  {
+    if(k<=N)
+      System.out.println(k);
+    
+    k = k * 10;
+    Test(N,k);
+    k = k / 10;
+    k++;
+    if(k%10==0)
+      return;
+  }
+}
+
+
+/* INITIAL CALL : Test (25,1) */
