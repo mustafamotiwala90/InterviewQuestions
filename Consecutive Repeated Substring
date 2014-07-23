@@ -1,0 +1,33 @@
+// Write a program which returns true if the given string contains the consecutive repeated substring .
+// Ex-adabcabcd 
+// here abc is consecutive repeated substring.
+
+public boolean checkRepeatedSubstring(String original)
+
+{
+    if(original.length() < 2)
+      return false;
+  
+    int i,j=0;
+    int ptr1,ptr2=0;
+    int count = 0;
+    
+    while(i<=original.length()/2) {
+      ptr1 = 0;
+      ptr2 = i;
+        while(ptr2 < original.length()) {
+      
+          if(original.charAt(ptr1) == original.charAt(ptr2)
+            count++;
+          else
+            count = 0;
+        
+          if(count==i)
+            return true;
+            ptr1++;
+            ptr2++;
+    }
+    i++;
+    }
+    return false;
+}
