@@ -1,0 +1,20 @@
+//Print all interleavings of two strings . E.g AB and CD .. 
+
+
+SOLUTION : A form of Restricted Permutation
+
+
+public permutation(String s1,String s2,String soFar)
+{
+  if((s1==null || s1.length() ==0) && (s2==null || s2.length() ==0))
+    return;
+  
+  if(s1.length==0 || s1 == null)
+    System.out.println(" " + soFar + " " + s2);
+    
+  if(s2.length==0 || s2 == null)
+    System.out.println(" " + soFar + " " + s1);
+
+  permutation(s1.substring(1),s2,soFar + s1.charAt(0));
+  permutation(s1,s2.substring(1),soFar + s2.charAt(0));
+}
