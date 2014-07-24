@@ -1,0 +1,26 @@
+//Remove Duplicated from a Singly Linked List 
+
+
+public void removeDuplicateNodes()
+{
+  Node current = head;
+  Node next_next;
+  
+  // List is empty
+  if(current==null)
+    return;
+
+  while(current.next!=null)
+  {
+    if(current.data == current.next.data)
+     {
+      next_next = current.next.next;
+      
+      //Delete Node here
+      //free(current.next);
+      
+      current.next = next_next;
+     }
+     else
+      current = current.next;
+}
