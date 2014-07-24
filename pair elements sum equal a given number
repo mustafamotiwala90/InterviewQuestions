@@ -1,0 +1,17 @@
+// Find a pair of elements from an array whose sum equals a given number 
+
+
+int arr[]; //array
+int K; //sum
+
+HashMap<Integer,Integer> numbers = new HashMap<Integer,Integer>();
+
+for(int i = 0;i<arr.length;i++)
+  numbers.put(arr[i],i);
+  
+for(int j = 0;j<arr.length;j++)
+  if(numbers.get(K-arr[j])!=j)
+    print " pair j , numbers.get(K-arr[j]) " exists;
+  end-if;
+end-for;
+
