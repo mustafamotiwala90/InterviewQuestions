@@ -1,0 +1,19 @@
+// Maximum path sum between two leaves of a binary tree
+
+
+int maxPathSumUntil(Node root,int res)
+{
+  if(root == null)
+    return;
+  
+  int lpSum = maxPathSumUntil(root.left,res);
+  int rpSum = maxPathSumUntil(root.right,res);
+
+  int current_max = Math.max((lpSum + rpSum + root.data), Math.max(lpSum,rpSum));
+  
+  if(res<current_max)
+    res = current_max;
+
+  return Math.max(lpSum,rpSum) + root.data
+
+}
