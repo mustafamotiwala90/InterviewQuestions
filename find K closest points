@@ -1,0 +1,9 @@
+// Find K closest points in a plane
+
+
+You can do it in O(n), but you have to avoid heaps. 
+First build an array with the distances to the origin and the corresponding point. O(n) 
+Then find the Kth largest distance using the Selection algorithm. O(n) 
+The K-1 smallest distances are to the left of the Kth distance, in no particular order. 
+
+So the total is O(n).
