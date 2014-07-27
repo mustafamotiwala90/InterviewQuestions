@@ -1,0 +1,28 @@
+//Serialize and Deserialize a binary tree
+
+
+StringBuilder treeSerial = new StringBuilder();
+void serializeBinaryTree(Node root,StringBuilder treeSerial)
+{
+  if(!root)
+    treeSerial.append("#");
+  else {
+    treeSerial.append(root);
+    serializeBinaryTree(root.left,treeSerial);
+    serializeBinaryTree(root.right,treeSerial);
+  }
+}
+
+//Deserialize the binary tree
+
+void readBinaryTree(Node root,String preOrderStr,int token)
+{
+  Char c = preOrderStr.charAt(token);
+  if(c > = '0' && c <='9') {
+      root = new Node(c);
+      readBinaryTree(root.left,preOrderStr,token++);
+      readBinaryTree(root.right,preOrderStr,token++);
+    }
+  else
+      return;  
+}
