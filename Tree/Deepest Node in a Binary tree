@@ -1,0 +1,21 @@
+// Find the deepest node in a binary tree/ Find the maximum height/depth of a binary tree.
+
+int max_level = -1;
+int current_level = 0;
+
+Node getDeepestNode(Node root,int current_level,int max_level,Node node)
+{
+  if(!root)
+    return;
+  
+  if(current_level > max_level)
+  {
+    max_level = current_level;
+    node = root;
+  }
+  
+  getDeepestNode(root.left,current_level + 1,max_level,node);
+  getDeepestNode(root.right,current_level + 1,max_level,node);
+  
+  return node;
+}
