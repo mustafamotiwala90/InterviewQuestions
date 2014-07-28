@@ -1,0 +1,21 @@
+Given an array of integer, find the minimum in the sliding window of size 4, in most optimal way. 
+ex [2,1,3,4,6,3,8,9,10,12,56] 
+Output : [1,1,3,3,3,3,8.....]
+
+
+
+Solution :
+
+Step 1 : 
+  - Divide the entire array into blocks of n/w 
+Step 2 : 
+  - For each block calculate the minimum_so_far by replacing each element in a block with the minimum seen so far.
+     min_so_far[] = 2, 1, 1, 1 | 6, 3, 3, 3 | 10, 10, 10  
+Step 3 :
+  - For each block traverse from end to start and repeat the same process to form a minimum_for_future array
+    min_in_future[] = 1, 1, 3, 4 | 3, 3, 8, 9 | 10, 12, 56 
+Step 4 :
+   now, min at each position i in current window, 
+   sliding_min(i) = min {min_in_future[i], min_so_far[i+w-1]} 
+
+sliding_min = 1, 1, 3, 3, 3, 3, 8, ....
