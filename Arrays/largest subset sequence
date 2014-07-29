@@ -1,0 +1,40 @@
+Given an int array which might contain duplicates, find the largest subset of it which form a sequence. 
+Eg. {1,6,10,4,7,9,5} 
+then ans is 4,5,6,7 
+
+Sorting is an obvious solution. 
+
+
+public int[] largestSubsetSequence(int [] arr)
+{
+  int max_length = 0;
+  Map<Integer,Integer> numMap = new HashMap<Integer,Integer>();
+  for(int i : arr)
+  {
+    int start = i;
+    int end = i;
+    
+    if(numMap.containsKey(i+1) && numMap.get(i+1) >= i+1)
+    {
+      end = map.get(i + 1);
+      numMap.remove(i+1);
+      numMap.remove(end);
+    }
+    else if (numMap.containsKey(i-1) && numMap.get(i-1) >= i-1)
+    {
+      start = map.get(i-1);
+      numMap.remove(i-1);
+      numMap.remove(start);
+    }
+    numMap.put(start,end);
+    numMap.put(end,start);
+    
+    if(end-start+1>max_length)
+    {
+      first = start;
+      max_length = end - start + 1;
+    }
+  }
+
+}
+
