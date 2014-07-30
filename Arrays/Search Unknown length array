@@ -1,0 +1,41 @@
+// Search unknown length sorted array for a number.
+// if its a repeated number then return the first occurence or else return -1.
+
+
+// exponentially increase the index to be searched in the array. once an element found which is greater than the number than the number
+// must be present between index + 1 and index - 1
+
+int getIndex(int arr[],int num)
+{
+
+int index;
+int exp = 1;
+
+while(true)
+{
+  try {
+    if(arr[index]==num)
+      return index;
+    else if (arr[index] < num)
+      index = 2 ^ exp;
+      exp + = 1;
+    else 
+      break;
+  }catch(OutOfBoundsException er){
+    break;
+  }
+  int left = (index/2) + 1;
+  int right = index - 1;
+  
+  while(left < right)
+  {
+    int mid = left + (left-right)/2;
+    if(arr[mid]==num)
+      return mid;
+    else if(arr[mid]>num)
+      right = mid -1;
+    else
+      left = mid + 1;
+  }
+
+}
