@@ -1,0 +1,25 @@
+Given an array:
+
+[a_1, a_2, ..., a_N, b_1, b_2, ..., b_N, c_1, c_2, ..., c_N ]  
+
+convert it to:
+
+[a_1, b_1, c_1, a_2, b_2, c_2, ..., a_N, b_N, c_N]
+
+
+int getIndex(int index,int n)
+  return (index%3)*n + index/n;
+  
+void changeArrayInPlace(int arr[])
+{
+  int swapIndex;
+  for (int i = 0;i<arr.length;i++)
+  {
+    swapIndex = getIndex(i,arr.length);
+    
+    while(swapIndex < i)
+      swapIndex = getIndex(swapIndex,i);
+      
+    swap(arr[i],arr[swapIndex]);  
+  }
+}
