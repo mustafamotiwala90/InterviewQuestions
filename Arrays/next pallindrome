@@ -1,0 +1,7 @@
+// For generating the next pallindrome number
+
+// if it is a odd number. Keep middle element fixed and mirror the left half array into right half
+// if even then assume the middle digits as 2 digits and mirror around it
+
+// if number generated is less than original then increement middle digit by 1
+// if middle digit is 9 then round up to the nearest number.
