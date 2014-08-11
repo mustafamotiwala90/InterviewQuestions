@@ -1,0 +1,11 @@
+// To check if a tree is symmetric or not
+
+boolean isMirrorImage(Node n1, Node n2)
+{
+  if(n1 == null && n2 == null)
+    return true;
+  else if(n1.val!=n2.val)
+    return false;
+  else
+    return isMirrorImage(n1.left,n2.right) && isMirrorImage(n1.right,n2.left);
+}
