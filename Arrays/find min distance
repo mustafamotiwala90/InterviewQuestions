@@ -1,0 +1,40 @@
+// Find minimum distance between x and y in an array containing duplicates 
+
+int minDistance(int arr[],int x,int y)
+{
+  int prevIndex =-1;
+  int min=0;
+  int distance;
+
+  for(int i=0;i<arr.length;i++)
+  {
+    if(arr[i]==x || arr[i]==y)
+    {
+      if(prevIndex==-1)
+      {
+        first=arr[i]==x?x:y;
+        second = first==x?y:x;
+        prevIndex=i;
+      }
+      else{
+        
+        if(arr[i]==first)
+          prevIndex = i;
+        
+        //
+        else {  
+          distance = i - prevIndex;
+          min = Math.min(min,distance);
+          prevIndex = i;
+          
+          //swap first and second
+          int temp = first;
+          first = second;
+          second=temp;
+        }
+      }
+    
+    }
+  }
+  return min;
+}
