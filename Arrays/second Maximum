@@ -1,0 +1,24 @@
+// Find second maximum in an array efficiently
+
+int secondMaximum(int arr[] numbers)
+{
+  int max=0;
+  int secondMax=0;
+  
+  for(int i=0;i<numbers.length;i++) {
+  
+    int current = numbers[i];
+    if(current>max)
+    {
+      secondMax=max;
+      max=current;
+    }
+    else if(current>secondMax)
+    {
+      secondMax=current;
+    }
+  
+  }
+  return secondMax;
+
+}
