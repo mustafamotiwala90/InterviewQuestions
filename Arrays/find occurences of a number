@@ -1,0 +1,20 @@
+// Given a sorted array which contains duplicates count the occurences of a number X
+
+int count(int arr,int start,int end,int x) {
+  
+  if(start>end)
+    return;
+  
+  int mid = (start + end)/2;
+  int countNum=0;
+  
+  if(arr[mid]==x)
+    countNum = 1 + count(arr,start,mid-1,x) + count(arr,mid+1,end,x);
+  else if(arr[mid]<x)
+    countNum = count(arr,mid+1,end,x);
+  else
+    countNum = count(arr,start,mid-1,x);
+
+  
+  return countNum;
+}
