@@ -1,0 +1,17 @@
+// http://puddleofriddles.blogspot.com/2011/10/given-string-write-all-possible.html
+// Print all possible upper and lower case permutations of a string in java
+
+initial call : toggle("abc",0)
+
+void toggle(String word,int n)
+{
+  if(n==word.length()) {
+    System.out.println("word:" +word);
+    return;
+  }
+    
+  word.charAt(n) = word.charAt(n).toUpperCase();
+  toggle(word,n+1);
+  word.charAt(n) = word.charAt(n).toLowerCase();
+  toggle(word,n+1);
+}
