@@ -1,0 +1,38 @@
+// Find if a string A or anagram of A is a substring of String B
+// String a="xxyz";
+// String b="afyzxydgxzyxksldfm";
+// Answer : TRUE
+
+boolean isAnagramSubstring(String a,String b)
+{
+  int table[256] = new int[256];
+  Arrays.fill(table,0);
+  int orig_table[256] = new int[256];
+  Arrays.fill(orig_table,0);
+  
+  for(int i=0;i<a.length();i++)
+  {
+    table[a.charAt(i)]++;
+    orig_table[a.charAt(i)]++;
+  }
+  
+  int count=0;
+  for(int i =0;i<b.length();i++)
+  {
+    if(table[b.charAt(i)]!=0)
+    {
+      table[b.charAt(i)]--;
+      count++;
+      
+      if(count == a.length())
+        return true;
+    
+    }else if(count>0)
+    {
+      count=0;
+      table=orig_table.clone();
+    }
+    //else do nothing
+  }
+  return false;
+}
