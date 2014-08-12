@@ -1,0 +1,17 @@
+// Searching for a pattern in the most Naive manner.
+
+void findPattern(String pattern,String text)
+{
+  for(int i=0;i<text.length()-pattern.length();i++)
+  {
+    for(int j=0;j<pattern.length();j++)
+    {
+      if(!text.chartAt(i+j).equals(pattern.charAt(j))
+        break;
+    }
+    
+    if(j==pattern.length())
+      System.out.println("Pattern found at index"+j);
+  
+  }
+}
