@@ -1,0 +1,36 @@
+// Construct a Binary tree given inorder and preorder traversal.
+
+            5
+           / \
+         2    7
+      /   \   /
+     1    4  6
+
+Inorder: 1 2 4 5 6 7
+Preorder: 5 2 1 4 7 6
+
+Node create(int[] inorder,int[] preorder,int inStart,int inEnd)
+{
+  if(inStart>inEnd)
+    return null;
+ 
+  static int preIndex = 0;
+  Node temp = null;
+    
+  if(inStart==inEnd)
+    return temp;
+ 
+  temp.data = preorder[preIndex++];
+  
+  for(int i =inStart;i<inEnd;i++) {
+    if(inorder[i]==preorder[preIndex])
+      break;
+  }
+  
+  
+  temp.right = create(inorder,preorder,i+1,inEnd);
+  temp.left = create(inorder,preorder,inStart,i-1);
+}
+
+
+}
