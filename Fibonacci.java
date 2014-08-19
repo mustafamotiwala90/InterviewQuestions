@@ -1,6 +1,6 @@
 // Fibonacci Series with Recursion
 
-```int fib(int n)
+int fib(int n)
 {
   if(n<=1)
     return n;
@@ -24,4 +24,4 @@ int fib(int n) {
     fiboPrev = temp;
   }
 return fibo;
-}```
+}
