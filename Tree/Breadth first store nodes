@@ -1,0 +1,31 @@
+Given a binary search tree, design an algorithm which creates a linked list of all the nodes at each depth 
+(eg, if you have a tree with depth D, you’ll have D linked lists).
+
+
+ArrayList<LinkedList<Node>> findLevelListNode(Node root) {
+
+  ArrayList<LinkedList<Node>> result = new ArrayList<LinkedList<Node>>();
+  LinkedList<Node> list = new LinkedList<Node>();
+  
+  int level = 0;
+  list.add(root);
+  result.add(level,list);
+  while(true)
+  {
+    list = new LinkedList<Node>();
+    for(int i=0;i<result.get(level).size();i++)
+    {
+        Node n = (Node) result.get(level).get(i);
+          if(n.left!=null) list.add(n.left);
+          if(n.right!=null) list.add(n.right);
+          
+    }
+    if(list.size()>0)
+      result.add(level + 1,list);
+    else
+      break;
+    level++;
+  }
+  return result;
+  
+}
