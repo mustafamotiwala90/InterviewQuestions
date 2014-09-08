@@ -1,4 +1,4 @@
-// Implementing Merge Sort
+
 
 void doMergeSort(int low,int high) {
   
