@@ -1,4 +1,3 @@
-//Remove 'b' and 'ac' from string in-place
 
 void removeBandAC(char *p, int size)
 {
