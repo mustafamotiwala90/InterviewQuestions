@@ -38,3 +38,39 @@ public int[] largestSubsetSequence(int [] arr)
 
 }
 
+
+/********************************************************************************************************************************/
+
+ALTERNATE SOLUTION
+
+public void subsetSubsequence(int[] num)
+{
+  Set<Integer> numbers = new Hashset<Integer>();
+  int max=1;
+  
+  for(int e:num)
+    numbers.add(e);
+    
+  for(int num : numbers.keySet()) {
+    int left = num-1;
+    int right = num+1;
+    int count=1;
+    
+    while(numbers.contains(left)){
+      count++;
+      numbers.remove(left);
+      left--;
+    }
+    
+    while(numbers.contains(right)){
+      count++;
+      numbers.remove(right);
+      right++;
+    }
+    
+    max = Math.max(count,max);
+  }
+ 
+  return max;
+}
+
