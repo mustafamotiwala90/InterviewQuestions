@@ -4,8 +4,8 @@
 
 boolean hasPathSum(Node node,int sum)
 {
-  if(node==null)
-    return (sum ==0);
+  if(node.left==null && node.right == null)
+    return (sum - node.data ==0);
   else
   {
     int subSum = sum - node.data;
