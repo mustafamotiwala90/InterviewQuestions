@@ -1,7 +1,7 @@
-CLRS Dynamic programming solution
+// CLRS Dynamic programming solution
 
-two strings X and Y 
-Find Longest common substring between the two strings.
+// two strings X and Y 
+// Find Longest common substring between the two strings.
 
 LCS-length(X,Y)
 {
