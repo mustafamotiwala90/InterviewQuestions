@@ -1,0 +1,27 @@
+// Given an array of integers, one can maximum jump a[i] from a given index i. 
+// Find minimum number of jumps required to reach at the end of the array.
+// {1,1,2,3,1,4}
+
+
+int findMinNumberJumps(int arr[]){
+  
+  int[] distance = new int[arr.length];
+  distance[0] = 0;
+  
+  for(i=1;i<arr.length;i++)
+    distance[i] = Integer.MAX_VALUE;
+    
+  for(i=0;i<arr.length;i++){
+    for(j=0;j<arr[i];j++){
+      
+      if(i+j>arr.length)
+        break;
+      
+      if(distance[i] + 1 < distance[i+j])
+        distance[i+j] = distance[i]+1;
+    }
+  }
+  
+for(int i =0;i<arr.length;i++)
+  System.out.println(distance[i]);
+}
