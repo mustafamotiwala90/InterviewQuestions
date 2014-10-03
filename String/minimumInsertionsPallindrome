@@ -1,0 +1,28 @@
+// Minimum number of insertions needed to make a string pallindrome.
+
+
+initial call : findMinimumInsertions(word,0,word.length-1);
+
+int findMinimumInsertions(String word,int low,int high) {
+
+  if(low > high) 
+    return Integer.MAX_VALUE;
+  
+  if(low==high)
+    return 0;
+  
+  if(low==high-1) {
+    if(word.charAt(low)==word.charAt(high))
+      return 0;
+    else
+      return 1;
+  }
+  
+  if(word.charAt(low)==word.charAt(high))
+    return findMinimumInsertions(word,low+1,high-1);
+  else 
+    Math.min(findMinimumInsertions(word,low,high-1),findMinimumInsertions(word,low+1,high)) + 1;
+    
+    
+
+}
