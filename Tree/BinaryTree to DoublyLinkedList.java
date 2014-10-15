@@ -2,7 +2,7 @@
 
 Solution : The trick is to do inorder traversal while keeping track of the previous node. 
 
-
+BinaryTreeToDLL(root,null);
 
 void BinaryTreeToDLL(Node root,Node head){
 
