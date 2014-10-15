@@ -19,3 +19,24 @@ void preOrderTraversal(Node root)
       nodes.push(node.right);
   }
 }
+
+void inOrderTraversal(Node root) {
+  
+  if(root==null)
+    return;
+  
+  Stack<Node> inorderNodes = new Stack<Node>();
+ 
+  current = root;
+  while(!inorderNodes.empty() || current){
+    if(current){
+     inorderNodes.push(current);
+     current = current.left;
+    }else{
+      current = inorderNodes.pop();
+      System.out.println(current.data);
+      current = current.right;
+    }
+  }
+  
+}
